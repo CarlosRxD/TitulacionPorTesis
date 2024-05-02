@@ -1,6 +1,6 @@
 import Tarea from './Tarea.js';
-import ListaTareas from './ListaTareas.js';
-import { menu } from './Menu.js';
+import ListaTareas from './ListaTareas.js'
+import {menu} from '../../MenuDeslizante/js/Menu.js'
 
 var lista = new ListaTareas;
 
