@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Asignación de Revisores de Tesis</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="asignarRevisores/js/mainRevisores.js" type="module"></script>
+        <style>
+            body{
+                background-image: url(https://www.unpa.edu.mx/rv/loma_bonita/2022/1.jpg); /* Ruta de la imagen de fondo */
+                background-size: cover; /* Cubrir toda la pantalla */
+                background-repeat: no-repeat; /* Evitar la repetición de la imagen */
+            }
+        </style>
+    </head>
+    <body>
+
+
+        <div class="container mt-5">
+            <h1>Asignación de Revisores de Tesis</h1>
+
+            <div class="row mt-4">
+
+
+                <div class="col-md-4">
+                    <label for="alumnoInput" class="form-label">Nombre del Alumno:</label>
+                    <input type="text" class="form-control" id="alumnoInput">
+                </div>
+
+                <div class="col-md-4">
+                    <label for="tesisInput" class="form-label">Título de la Tesis:</label>
+                    <input type="text" class="form-control" id="tesisInput">
+                </div>
+
+
+                <div class="col-md-4">
+                    <label for="revisorSelect" class="form-label">Seleccionar Revisor:</label>
+                    <select class="form-select" id="revisorSelect">
+                        <option value="">Seleccionar revisor</option>
+                        <option value="1">M.C Ariel</option>
+                        <option value="2">DR.Fabián</option>
+                        <option value="3">MC.Rafael</option>
+                        <!-- Añade más opciones según necesites -->
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <button id="agregarBtn" class="btn btn-primary mt-4">Agregar Revisor</button>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Alumno</th>
+                                <th>Titulo de la Tesis</th>
+                                <th>Revisor Asignado</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="tablaRevisores">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script type="module">
+            import main from './main.js';
+            import {agregarRevisionAsignada} from './main.js';
+
+            $(document).ready(function () {
+               alert(localStorage.getItem('revisionesAsignadas'));
+                $("#agregarBtn").click(function () {
+                    agregarRevisionAsignada();
+                });
+            });
+                /*$('#agregarBtn').click(function () {
+                    var alumno = $('#alumnoInput').val();
+                    var tesis = $('#tesisInput').val();
+                    var revisor = $('#revisorSelect option:selected').text();
+
+
+                    if (alumno !== '' && tesis !== '' && revisor !== '') {
+                        var newRow = '<tr><td>' + alumno + '</td><td>' + tesis + '</td><td>' + revisor + '</td></tr>';
+
+                        $('#tablaRevisores').append(newRow);
+                        $('#alumnoInput').val('');
+                        $('#tesisInput').val('');
+                        $('#revisorSelect').val('');
+                    } else {
+                        alert('Por favor, complete todos los campos.');
+                    }
+                });*/
+            
+        </script>
+
+    </body>
+</html>

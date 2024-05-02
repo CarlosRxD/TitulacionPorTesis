@@ -1,0 +1,190 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registro</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://www.unpa.edu.mx/images/favicon.ico" rel="icon" type="image/x-icon">
+        <script src="registrarTesista/js/mainTesista.js" type="module"></script>
+        <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+    </head>
+    <body style="background-color: #89af7f;">
+        <div class="container mt-5" style="background-color: white; border-radius: 1rem 1rem 1rem 1rem;">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <br><br>
+                    <div class="d-flex align-items-center mb-3 pb-1">
+                        <img src="https://www.unpa.edu.mx/images/unpa_large.png" alt="Logo UNPA" class="me-3" style="width: 600px; height: 100px; object-fit: cover;">
+                        <!--<span class="h1 fw-bold mb-0">UNIVERSIDAD DEL PAPALOAPAN</span>-->
+                    </div>
+                    <div id="formulario1" class="formulario" >
+                        <h3>Registrar Tesista</h3>
+                        <div class="container-fluid">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="mx-auto cf-container">
+                                        <form action="" method="post">
+                                            <div class="cf-cover">
+                                                <div class="form-row row">
+                                                    <div class="col-md-12">
+                                                        <label>Matricula</label>
+                                                        <input id="txtMatricula" type="text" required="" placeholder="Introducir Matricula" class="form-control">
+                                                    </div>
+
+                                                </div>
+                                                <div class="form-row row">
+                                                    <div class="col-md-6">
+                                                        <label>Nombre</label>
+                                                        <input id="txtNombre" type="text" required="" placeholder="Introducir Nombre" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label>Apellidos</label>
+                                                        <input id="txtApellidos" type="text" required="" placeholder="Introducir Apellidos" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row row">
+                                                    <div class="col-md-12">
+                                                        <label>Campus</label>
+                                                        <select id="selectorCampus" class="form-select mb-3">
+                                                            <option value="campus1">Loma Bonita</option>
+                                                            <option value="campus2">Tuxtepec</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row row">
+                                                    <div class="col-md-12">
+                                                        <label>Carrera</label>
+                                                        <select id="campus1" class="campus form-select mb-3">
+                                                            <option value="Computacion">Ing. en Computacion</option>
+                                                            <option value="Disenio">Ing. en Diseño</option>
+                                                            <option value="Agricola">Ing. Agricola Tropical</option>
+                                                            <option value="Acuicultura">Ing. en Acuicultura</option>
+                                                            <option value="Mecatronica">Ing. en Mecatronica</option>
+                                                            <option value="Zootecnia">Lic. en Zootecnia</option>
+                                                            <option value="Matematicas">Lic. en Matematicas Aplicadas</option>
+                                                           
+                                                        </select>
+                                                        <select id="campus2" class="campus form-select mb-3" style="display: none;">
+                                                            <option value="Alimentos">Ing. en Alimentos</option>
+                                                            <option value="Empresariales">Lic. en Ciencias Empresariales</option>
+                                                            <option value="Quimica">Lic. en Ciencias Quimicas</option>
+                                                            <option value="Biotecnologia">Ing. en Biotecnologia</option>
+                                                            <option value="Enfermeria">Lic. en Enfermeria</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row row">
+                                                    <div class="col-md-12">
+                                                        <label>Titulo de Tesis</label>
+                                                        <input id="txtTituloTesis" type="text" required="" placeholder="Introducir el Titulo" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row row">
+                                                    <div class="col-md-12">
+                                                        <label>Director de Tesis</label>
+                                                        <input id="txtDirector" type="text" required="" placeholder="Introducir Nombre del Director de Tesis" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row row">
+                                                    <div class="col-md-12">
+                                                        <label>Co-Director de Tesis</label>
+                                                        <input id="txtCodirector" type="text" required="" placeholder="Introducir Nombre del Co-Director de Tesis" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row row">
+                                                    <div class="col-md-12">
+                                                        <label>Correo Electronico</label>
+                                                        <input id="txtCorreo" type="text" required="" placeholder="Introducir Correo Electronico" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row row">
+                                                    <div class="col-md-12">
+                                                        <label>Contraseña</label>
+                                                        <input id="password" required="" type="password" placeholder="Introducir Contraseña" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row row">
+                                                    <div class="col-md-12">
+                                                        <label>Confirmar Contraseña</label>
+                                                        <input id="confirm_password" required="" type="password" placeholder="Confirmar Contraseña" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <br><br>
+
+
+                                                <div class="form-row row">
+                                                    <div class="col-md-12">
+                                                        <button id="agregarTBtn" class="btn btn-primary w-100" >Registrar</button>
+                                                    </div>
+                                                </div>
+                                                <br><br>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="module">
+            import main from './main.js';
+            import Tesista from "./Tesista.js";
+            import agregarT from './main.js';
+
+            $(document).ready(function () {
+                //let x=new Tesista("x","x","x","x","x","x","x","x","x");               
+                //agregarT(x);
+
+                alert(localStorage.getItem('listaTesistas'));
+               
+                $("#agregarTBtn").click(function () {
+                    agregarT();
+                });
+            });
+        </script>
+        <script>
+            document.getElementById("formulario1").addEventListener("input", function () {
+                var password = document.getElementById("password").value;
+                var confirm_password = document.getElementById("confirm_password").value;
+                var submitBtn = document.getElementById("submitBtn");
+
+                if (password != confirm_password) {
+                    document.getElementById("confirm_password").setCustomValidity("Las contraseñas no coinciden");
+                } else {
+                    document.getElementById("confirm_password").setCustomValidity("");
+                }
+
+                if (this.checkValidity()) {
+                    submitBtn.disabled = false;
+                } else {
+                    submitBtn.disabled = true;
+                }
+            });
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#selectorCampus').change(function () {
+                    var seleccionado = $(this).val();
+                    $('.campus').hide();
+                    $('#' + seleccionado).show();
+                });
+            });
+        </script>
+    </body>
+</html>

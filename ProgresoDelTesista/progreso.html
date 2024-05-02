@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progreso</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="js/main.js" type="module"></script>
+    <!-- Incluye los estilos de Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Incluye la biblioteca Font Awesome para los iconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="css/estilo.css" rel="stylesheet">
+    <style>
+        .bg-custom {
+            background-color: #006143;
+        }
+
+        .custom-modal-content {
+            background-color: #cbfff4;
+            /* Cambia "your_color_here" al color deseado */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="progress bg-dark" role="progressbar" aria-label="Animated striped example">
+        <div class="progress-bar progress-bar-striped progress-bar-animated bg-custom" style="width: 60%"></div>
+    </div>
+    <nav class="navbar navbar-dark bg-dark">
+        <button class="bg-success p-2 text-white" data-toggle="modal" data-target="#taskModal ">
+            <i class="fas fa-upload"></i> Agregar Tareas
+        </button>
+        <button class="bg-success p-2 text-white" data-toggle="modal" data-target="#sendingModal">
+            <i class="fas fa-arrow-right "></i> Enviar Avances
+        </button>
+
+
+        <button class="bg-success p-2 text-white" data-toggle="modal" data-target="#notificationsModal">
+            <i class="fas fa-bell"></i> Notificaciones
+        </button>
+    </nav>
+    <div class="container">
+        <img src="imgs/unpa_large.png" alt="Universidad del Papaloapan" data-label-id="0"
+            style="width: 84.5%; height: 10%; display: block; margin: 0 auto;">
+        <!-- Modal para notificaciones -->
+        <div class="modal fade" id="notificationsModal" tabindex="-1" role="dialog"
+            aria-labelledby="notificationsModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content custom-modal-content ">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="notificationsModalLabel">Notificaciones</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">List group item heading</h5>
+                                    <small>3 days ago</small>
+                                </div>
+                                <p class="mb-1">Some placeholder content in a paragraph.</p>
+                                <small>And some small print.</small>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">List group item heading</h5>
+                                    <small class="text-body-secondary">3 days ago</small>
+                                </div>
+                                <p class="mb-1">Some placeholder content in a paragraph.</p>
+                                <small class="text-body-secondary">And some muted small print.</small>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">List group item heading</h5>
+                                    <small class="text-body-secondary">3 days ago</small>
+                                </div>
+                                <p class="mb-1">Some placeholder content in a paragraph.</p>
+                                <small class="text-body-secondary">And some muted small print.</small>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para Tareas -->
+        <div class="modal fade" id="taskModal" tabindex="-1" role="dialog" aria-labelledby="taskModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content custom-modal-content ">
+                    <div class="modal-header">
+                        <div style="display: flex; justify-content: center;">
+                            <h3 class="modal-title">
+                                <i class="fas fa-tasks mr-2"></i>Tareas Pendientes
+                            </h3>
+                        </div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+
+                    <div class="modal-body">
+                        <div class="table-responsive">
+                            <table class="table table-dark table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Actividad</th>
+                                        <th scope="col">Estado</th>
+                                        <th scope="col">Fecha Límite</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="text" id="actividad_input"></td>
+                                        <td><input type="text" id="estado_input"></td>
+                                        <td><input type="date" id="fecha_limite_input"></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="guardarDatos" class="btn btn-success" data-dismiss="modal" >Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="sendingModal" tabindex="-1" role="dialog" aria-labelledby="sendingModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content custom-modal-content ">
+                    <div class="modal-header">
+                        <div class="flex h-full w-full flex-col items-center justify-center rounded-area-500 border-2 border-white shadow-800 bg-white bg-damier-[#f5f2fa] bg-damier-large"
+                            data-label-id="0">
+                            <div class="py-6">
+                                <input accept="image/jpeg,image/png,image/webp" aria-hidden="true" class="hidden"
+                                    type="file">
+                                <button type="button"
+                                    class="relative overflow-hidden inline-flex w-fit items-center justify-center text-center appearance-none rounded-500 outline-none transition duration-200 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-30 max-w-full truncate focus-visible:ring-[3px] bg-content-accent hover:bg-accent-400 focus-visible:bg-accent-400 active:bg-accent-600 focus-visible:ring-accent-alpha-5 text-white before:transition-transform before:absolute before:inset-0 before:pointer-events-none before:hidden before:top-[50%] before:h-[500%] before:w-[200%] before:animate-button-loading-indeterminate-wiggle before:blur-3xl"
+                                    style="--loading-progress-percent:0%">
+                                    <div
+                                        class="max-w-full flex items-center justify-center h-14 icon-to-edge-spacious-pl-600 content-to-edge-spacious-pr-700">
+                                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                                            class="icon-size-600 shrink-0">
+                                            <g clip-path="url(#clip0_8829_13883)">
+                                                <circle cx="12" cy="12" r="12" fill-opacity="0.15">
+                                                </circle>
+                                                <path
+                                                    d="M18 11H13V6C13 5.73478 12.8946 5.48043 12.7071 5.29289C12.5196 5.10536 12.2652 5 12 5C11.7348 5 11.4804 5.10536 11.2929 5.29289C11.1054 5.48043 11 5.73478 11 6V11H6C5.73478 11 5.48043 11.1054 5.29289 11.2929C5.10536 11.4804 5 11.7348 5 12C5 12.2652 5.10536 12.5196 5.29289 12.7071C5.48043 12.8946 5.73478 13 6 13H11V18C11 18.2652 11.1054 18.5196 11.2929 18.7071C11.4804 18.8946 11.7348 19 12 19C12.2652 19 12.5196 18.8946 12.7071 18.7071C12.8946 18.5196 13 18.2652 13 18V13H18C18.2652 13 18.5196 12.8946 18.7071 12.7071C18.8946 12.5196 19 12.2652 19 12C19 11.7348 18.8946 11.4804 18.7071 11.2929C18.5196 11.1054 18.2652 11 18 11Z">
+                                                </path>
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_8829_13883">
+                                                    <rect width="24" height="24">
+                                                    </rect>
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                        <span
+                                            class="max-w-full truncate component-semi-strong-600 text-to-leading-600">Subir
+                                            Archivos</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <input class="btn btn-primary" type="submit" value="Subir archivo">
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Actividad</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Fecha Límite</th>
+                        <th scope="col">Actividades</th>
+                    </tr>
+                </thead>
+                <tbody id="listaTareas">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Incluye los scripts de Bootstrap y jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
