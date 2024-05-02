@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    /* Para evitar el desplazamiento horizontal al abrir el menú */
+}
+
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    /* Ocultar el menú lateral fuera de la pantalla */
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    padding-top: 50px;
+    transition: all 0.3s ease;
+}
+
+#sidebar.active {
+    left: 0;
+    /* Mostrar el menú lateral al desplazarlo hacia la derecha */
+}
+
+#sidebar button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+#btnOpen {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.menuD {
+    display: none;
+    /* Ocultar el menú de navegación principal inicialmente */
+}
+
+#sidebar ul {
+    padding: 0;
+    margin: 50px;
+}
+
+#sidebar ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+#sidebar ul li a:hover {
+    background-color: #555;
+}

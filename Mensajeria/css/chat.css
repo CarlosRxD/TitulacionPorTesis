@@ -1,0 +1,121 @@
+.menu {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.menu-content {
+    display: none;
+    position: absolute;
+}
+
+.menu-content a {
+    display: block;
+    padding: 10px;
+}
+
+
+
+.menu:hover .menu-content {
+    display: block;
+}
+
+.custom-select {
+    font-size: x-large;
+    text-align: center;
+    background-color: #003834;
+    color: #fff;
+    border-style: none;
+}
+
+.chat-container {
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-header {
+    background-color: #075e54;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.chat-message {
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.chat-message:last-child {
+    border-bottom: none;
+}
+
+.chat-message.sent {
+    text-align: right;
+}
+
+.chat-message.sent .message-bubble {
+    background-color: #dcf8c6;
+    border-bottom-right-radius: 0;
+}
+
+.chat-message.received .message-bubble {
+    background-color: #e5e5ea;
+    border-bottom-left-radius: 0;
+}
+
+.message-bubble {
+    padding: 10px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    max-width: 70%;
+}
+
+.chat-input-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #eee;
+}
+
+.chat-input {
+    flex: 1;
+    margin-right: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+}
+
+.send-button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: #075e54;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.send-button:hover {
+    background-color: #054c3d;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 600px) {
+    .chat-container {
+        max-width: 100%;
+        border-radius: 0;
+    }
+
+    .chat-header,
+    .chat-message,
+    .chat-input-container {
+        padding: 10px;
+    }
+}
